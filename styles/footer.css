@@ -1,0 +1,33 @@
+footer {
+  width: 100%;
+  height: 11rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border: 1px solid green;
+  background-color: rgb(159, 152, 152);
+}
+
+.footer-box-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer-box-item.socials {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.footer-box-item.paragraph {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Julius Sans One', sans-serif;
+}
+
+.footer-box-item.socials a {
+  color: black !important;
+  font-size: 1.5rem;
+}
