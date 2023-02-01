@@ -6,8 +6,18 @@
 
 body {
   width: 100vw;
-  background-color: #1c8c71;
+  background-color: white;
   overflow-x: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+main {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .category-group {
@@ -18,6 +28,7 @@ body {
   justify-content: center;
   height: 11rem;
   gap: 7rem;
+  background-color: #00cba9;
 }
 
 .category-item {
@@ -28,7 +39,7 @@ body {
 }
 
 .category-item a {
-  background-color: rgb(159, 152, 152);
+  background-color: white;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -45,6 +56,15 @@ body {
   transition: all 0.4s linear;
 }
 
+.last-posts-group {
+  margin-top: 0rem !important;
+}
+
+.last-post-title {
+  margin-top: 3rem;
+  font-family: 'Julius Sans One', sans-serif;
+}
+
 .post-group {
   width: 100%;
   border: 1px solid black;
@@ -52,19 +72,45 @@ body {
   align-items: center !important;
   justify-content: center !important;
   height: 20rem;
+  margin: 0 !important;
 }
 
-.carousel-item img {
+.posts-group {
+  margin: 0 !important;
+}
+
+.btn.btn-primary.posts {
+  background-color: rgb(113, 112, 112);
+  border: none;
+}
+
+.card {
+  text-decoration: none;
+  color: black;
+  transition: all 0.6s linear;
+}
+
+.card:hover {
+  scale: 1.04;
+  transition: all 0.3s linear;
+  cursor: pointer;
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* .carousel-item img {
   width: 15rem;
   height: 15rem;
   max-width: 15rem;
   max-height: 15rem;
-}
+} */
 
 /********** POSTS  ***********/
 .posts-group {
   width: 100%;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   margin-top: 2rem;
@@ -72,29 +118,76 @@ body {
 }
 
 .post-item {
-  background-color: rgb(159, 152, 152);
+  background-color: white;
   width: 70%;
   border-radius: 5px;
-  display: flex;
-  gap: 2rem;
-  border: 1px solid purple;
+  display: grid;
+  grid-template-columns: 0.2fr 1fr;
+  margin-bottom: 2rem;
+  transition: all 0.5s linear;
+  cursor: pointer;
+  text-decoration: none;
+  color: black;
+  border: 1px solid gray;
+}
+
+.post-item:hover {
+  scale: 1.04;
+  transition: all 0.3s linear;
+  cursor: pointer;
+}
+
+.post-img-box {
+  width: 100%;
 }
 
 .img-post {
-  width: 10rem;
+  width: 100%;
   height: 10rem;
-  max-width: 10rem;
+  max-width: 100%;
   max-height: 10rem;
   border-radius: 5px 0px 0px 5px;
+}
+
+.post-text-box {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.post-price {
+  font-size: 1.5rem;
+}
+
+.post-text-top {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
 }
 
 .post-text-bottom {
   display: flex;
   width: 100%;
   justify-content: space-between;
-  border: 1px solid red;
+  color: rgba(68, 68, 68, 0.812);
+  font-size: 1rem;
 }
 
+.last-posts-group {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 4rem;
+}
 
+/********* CARDS  **********/
+.card {
+  background-color: white;
+  height: 25rem;
+}
 
-
+.card img {
+  width: 100%;
+  height: 50%;
+}

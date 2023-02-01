@@ -30,35 +30,59 @@
         <div class="category-item">
           <a href=""><i class="fa-solid fa-children"></i></a>
           <span>Infantil</span>
-        </div>      
+        </div>   
+        
+        <div class="category-item">
+          <a href=""><i class="fa-solid fa-clock"></i></a>
+          <span>Recentes</span>
+        </div> 
+      </div>
+      
+      <h1 class="last-post-title">Destaques</h1>
+      <div class="last-posts-group">
+        <a class="card" style="width: 18rem;" href="">
+          <img src="https://conteudo.imguol.com.br/c/noticias/c6/2020/05/14/denuncia-online-redes-sociais-megafone-trombone-celular-smartphone-discussao-debate-bate-boca-barraco-redes-sociais-live-streaming-propaganda-anuncio-1589494596431_v2_1x1.jpg" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            <!-- <a href="#" class="btn btn-primary posts">Go somewhere</a> -->
+          </div>
+        </a>
+
+        <a class="card" style="width: 18rem;">
+          <img src="https://conteudo.imguol.com.br/c/noticias/c6/2020/05/14/denuncia-online-redes-sociais-megafone-trombone-celular-smartphone-discussao-debate-bate-boca-barraco-redes-sociais-live-streaming-propaganda-anuncio-1589494596431_v2_1x1.jpg" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            <!-- <a href="#" class="btn btn-primary posts">Go somewhere</a> -->
+          </div>
+        </a>
+
+        <a class="card" style="width: 18rem;">
+          <img src="https://conteudo.imguol.com.br/c/noticias/c6/2020/05/14/denuncia-online-redes-sociais-megafone-trombone-celular-smartphone-discussao-debate-bate-boca-barraco-redes-sociais-live-streaming-propaganda-anuncio-1589494596431_v2_1x1.jpg" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            <!-- <a href="#" class="btn btn-primary posts">Go somewhere</a> -->
+          </div>
+        </a>
+
+        <a class="card" style="width: 18rem;">
+          <img src="https://conteudo.imguol.com.br/c/noticias/c6/2020/05/14/denuncia-online-redes-sociais-megafone-trombone-celular-smartphone-discussao-debate-bate-boca-barraco-redes-sociais-live-streaming-propaganda-anuncio-1589494596431_v2_1x1.jpg" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            <!-- <a href="#" class="btn btn-primary posts">Go somewhere</a> -->
+          </div>
+        </a>
       </div>
 
-      <div id="carouselExampleSlidesOnly" class="carousel slide post-group" data-bs-ride="carousel">
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <img src="https://a-static.mlcdn.com.br/800x560/conjunto-feminino-blusa-short-roupas-femininas-bellucy-modas/bellucymodas/15847709628/e5f663fe3ac69e454e20cd57d496513c.jpeg" class="d-block " alt="...">
-          </div>
-          <div class="carousel-item">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQeMI8nKHInMhJwnHJ38bZDmqvFJtHqXunM0Q&usqp=CAU" class="d-block " alt="...">
-          </div>
-          <div class="carousel-item">
-            <img src="https://cdn.vnda.com.br/600x/benevento/2022/06/22/16_6_4_414_Collin.png?v=1655925648" class="d-block " alt="...">
-          </div>
-        </div>
 
-          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-          </button>
-          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-          </button>
-      </div>
-
+      <h1 class="last-post-title">Mais Anúncios</h1>
 
       <div class="posts-group"> 
-        <div class="post-item">
+
+        <a class="post-item" hr ef="">
           <div class="post-img-box">
             <img src="https://conteudo.imguol.com.br/c/noticias/c6/2020/05/14/denuncia-online-redes-sociais-megafone-trombone-celular-smartphone-discussao-debate-bate-boca-barraco-redes-sociais-live-streaming-propaganda-anuncio-1589494596431_v2_1x1.jpg" alt="" class="img-post">
           </div>
@@ -67,13 +91,53 @@
               <h2>
                 Título Anúncio
               </h2>
+              <p class="post-price">R$34,90</p>
             </div>
             <div class="post-text-bottom">
               <p>Curitiba - PR</p>
               <span>Hoje, 18:20</span>
             </div>
           </div>
-        </div>
+        </a>
+
+        <a class="post-item" href="">
+          <div class="post-img-box">
+            <img src="https://conteudo.imguol.com.br/c/noticias/c6/2020/05/14/denuncia-online-redes-sociais-megafone-trombone-celular-smartphone-discussao-debate-bate-boca-barraco-redes-sociais-live-streaming-propaganda-anuncio-1589494596431_v2_1x1.jpg" alt="" class="img-post">
+          </div>
+          <div class="post-text-box">
+            <div class="post-text-top">
+              <h2>
+                Título Anúncio
+              </h2>
+              <p class="post-price">R$34,90</p>
+            </div>
+            <div class="post-text-bottom">
+              <p>Curitiba - PR</p>
+              <span>Hoje, 18:20</span>
+            </div>
+          </div>
+        </a>
+
+
+        <a class="post-item" href="">
+          <div class="post-img-box">
+            <img src="https://conteudo.imguol.com.br/c/noticias/c6/2020/05/14/denuncia-online-redes-sociais-megafone-trombone-celular-smartphone-discussao-debate-bate-boca-barraco-redes-sociais-live-streaming-propaganda-anuncio-1589494596431_v2_1x1.jpg" alt="" class="img-post">
+          </div>
+          <div class="post-text-box">
+            <div class="post-text-top">
+              <h2>
+                Título Anúncio
+              </h2>
+              <p class="post-price">R$34,90</p>
+            </div>
+            <div class="post-text-bottom">
+              <p>Curitiba - PR</p>
+              <span>Hoje, 18:20</span>
+            </div>
+          </div>
+        </a>
+
+
       </div>
     </main>
 
@@ -81,5 +145,10 @@
   <?php 
   include_once('./components/footer.php');
   ?>
+  <script src="./js/carrousel.js"></script>
 </body>
 </html>
+
+
+
+

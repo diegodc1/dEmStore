@@ -2,10 +2,12 @@
   width: 100%;
   display: grid;
   grid-template-columns: 0.25fr 1fr 0.25fr;
-  background-color: rgb(159, 152, 152);
+  background-color: white;
+  border-bottom: 2px solid rgb(84, 84, 84);
 }
 .header h1 {
   font-family: 'Julius Sans One', sans-serif;
+  color: #1c8c71;
 }
 .header-box-item {
   display: flex;
@@ -16,5 +18,5 @@
 
 .header-box-item a i {
   font-size: 1.7rem;
-  color: black;
+  color: #1c8c71;
 }

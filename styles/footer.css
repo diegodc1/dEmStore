@@ -3,8 +3,21 @@ footer {
   height: 11rem;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  border: 1px solid green;
-  background-color: rgb(159, 152, 152);
+  /* border: 1px solid green; */
+  background-color: white;
+  /* background-image: url('../assets/images/wave.svg'); */
+  /* background-repeat: no-repeat; */
+  /* background-size: cover; */
+  position: relative;
+  background-color: #00cba9;
+}
+
+.bg-footer-img {
+  /* width: 100vw; */
+  /* height: 50rem; */
+  /* position: absolute; */
+  /* z-index: -1; */
+  /* border: 1px solid red; */
 }
 
 .footer-box-item {
@@ -18,6 +31,7 @@ footer {
   align-items: center;
   justify-content: center;
   gap: 2rem;
+  /* position: absolute; */
 }
 
 .footer-box-item.paragraph {
@@ -25,6 +39,7 @@ footer {
   align-items: center;
   justify-content: center;
   font-family: 'Julius Sans One', sans-serif;
+  /* position: absolute; */
 }
 
 .footer-box-item.socials a {

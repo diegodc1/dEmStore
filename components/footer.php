@@ -3,13 +3,26 @@
   <link rel="stylesheet" href="../styles/footer.css">
 </head>
 <footer>
+  <!-- <div class="bg-footer-img">
+    <img src="../assets/images/wave.png" alt="">
+  </div> -->
+
+
   <div class="footer-box-item paragraph">
     <p>Siga nossas Redes Sociais</p>
   </div>
 
-  <div class="footer-box-item socials">
+    <div class="footer-box-item socials">
     <a href=""><i class="fa-brands fa-whatsapp"></i></a>
     <a href=""> <i class="fa-brands fa-facebook"></i></a>
     <a href=""><i class="fa-brands fa-instagram"></i></a>
+    </div>
   </div>
-</footer>
+
+
+
+
+
+
+
+</footer>  
