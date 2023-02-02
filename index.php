@@ -20,7 +20,7 @@
     <main>
       <div class="category-group">
         <div class="category-item">
-          <a href=""> <i class="fa-solid fa-user-tie"></i></a>
+          <a href=""> <i class="fa-solid fa-person"></i></a>
           <span>Masculino</span>
         </div>
         <div class="category-item">
@@ -41,38 +41,39 @@
       <h1 class="last-post-title">Destaques</h1>
       <div class="last-posts-group">
         <a class="card" style="width: 18rem;" href="">
-          <img src="https://conteudo.imguol.com.br/c/noticias/c6/2020/05/14/denuncia-online-redes-sociais-megafone-trombone-celular-smartphone-discussao-debate-bate-boca-barraco-redes-sociais-live-streaming-propaganda-anuncio-1589494596431_v2_1x1.jpg" class="card-img-top" alt="...">
+          <img src="https://img.olx.com.br/images/12/127245586945449.jpg" class="card-img-top" alt="...">
           <div class="card-body">
             <h5 class="card-title">Card title</h5>
             <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            <!-- <a href="#" class="btn btn-primary posts">Go somewhere</a> -->
+            <p class="card-price">R$124,90</p>
           </div>
         </a>
 
         <a class="card" style="width: 18rem;">
-          <img src="https://conteudo.imguol.com.br/c/noticias/c6/2020/05/14/denuncia-online-redes-sociais-megafone-trombone-celular-smartphone-discussao-debate-bate-boca-barraco-redes-sociais-live-streaming-propaganda-anuncio-1589494596431_v2_1x1.jpg" class="card-img-top" alt="...">
+          <img src="https://img.olx.com.br/images/00/005134412752327.jpg" class="card-img-top" alt="...">
           <div class="card-body">
             <h5 class="card-title">Card title</h5>
             <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            <!-- <a href="#" class="btn btn-primary posts">Go somewhere</a> -->
+            <p class="card-price">R$67,00</p>
           </div>
         </a>
 
         <a class="card" style="width: 18rem;">
-          <img src="https://conteudo.imguol.com.br/c/noticias/c6/2020/05/14/denuncia-online-redes-sociais-megafone-trombone-celular-smartphone-discussao-debate-bate-boca-barraco-redes-sociais-live-streaming-propaganda-anuncio-1589494596431_v2_1x1.jpg" class="card-img-top" alt="...">
+          <img src="https://img.olx.com.br/images/12/127211674873383.jpg" class="card-img-top" alt="...">
           <div class="card-body">
             <h5 class="card-title">Card title</h5>
             <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            <!-- <a href="#" class="btn btn-primary posts">Go somewhere</a> -->
+            <p class="card-price">R$80,00</p>
+
           </div>
         </a>
 
         <a class="card" style="width: 18rem;">
-          <img src="https://conteudo.imguol.com.br/c/noticias/c6/2020/05/14/denuncia-online-redes-sociais-megafone-trombone-celular-smartphone-discussao-debate-bate-boca-barraco-redes-sociais-live-streaming-propaganda-anuncio-1589494596431_v2_1x1.jpg" class="card-img-top" alt="...">
+          <img src="https://img.olx.com.br/images/87/879300849648735.jpg" class="card-img-top" alt="...">
           <div class="card-body">
             <h5 class="card-title">Card title</h5>
             <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            <!-- <a href="#" class="btn btn-primary posts">Go somewhere</a> -->
+            <p class="card-price">R$40,90</p>
           </div>
         </a>
       </div>
@@ -84,36 +85,36 @@
 
         <a class="post-item" hr ef="">
           <div class="post-img-box">
-            <img src="https://conteudo.imguol.com.br/c/noticias/c6/2020/05/14/denuncia-online-redes-sociais-megafone-trombone-celular-smartphone-discussao-debate-bate-boca-barraco-redes-sociais-live-streaming-propaganda-anuncio-1589494596431_v2_1x1.jpg" alt="" class="img-post">
+            <img src="https://auhekids.com.br/wp-content/uploads/2020/03/conjunto-batizado-jardineira-body-gravata1-829x800.jpeg" alt="" class="img-post">
           </div>
           <div class="post-text-box">
             <div class="post-text-top">
               <h2>
-                Título Anúncio
+                Conjunto para menino
               </h2>
-              <p class="post-price">R$34,90</p>
+              <p class="post-price">R$50,50</p>
             </div>
             <div class="post-text-bottom">
-              <p>Curitiba - PR</p>
-              <span>Hoje, 18:20</span>
+              <p>Colombo - PR</p>
+              <span>Hoje, 20:20</span>
             </div>
           </div>
         </a>
 
         <a class="post-item" href="">
           <div class="post-img-box">
-            <img src="https://conteudo.imguol.com.br/c/noticias/c6/2020/05/14/denuncia-online-redes-sociais-megafone-trombone-celular-smartphone-discussao-debate-bate-boca-barraco-redes-sociais-live-streaming-propaganda-anuncio-1589494596431_v2_1x1.jpg" alt="" class="img-post">
+            <img src="https://assets3.repassa.com.br/fit-in/0x600/filters:sharpen(0.5,0.5,true)/spree/products/2338700/original/IMG_3565.JPG" alt="" class="img-post">
           </div>
           <div class="post-text-box">
             <div class="post-text-top">
               <h2>
-                Título Anúncio
+                Camisa masculina estampada
               </h2>
-              <p class="post-price">R$34,90</p>
+              <p class="post-price">R$94,90</p>
             </div>
             <div class="post-text-bottom">
-              <p>Curitiba - PR</p>
-              <span>Hoje, 18:20</span>
+              <p>Araucária - PR</p>
+              <span>Omtem, 12:20</span>
             </div>
           </div>
         </a>
@@ -121,14 +122,14 @@
 
         <a class="post-item" href="">
           <div class="post-img-box">
-            <img src="https://conteudo.imguol.com.br/c/noticias/c6/2020/05/14/denuncia-online-redes-sociais-megafone-trombone-celular-smartphone-discussao-debate-bate-boca-barraco-redes-sociais-live-streaming-propaganda-anuncio-1589494596431_v2_1x1.jpg" alt="" class="img-post">
+            <img src="https://ireland.apollo.olxcdn.com/v1/files/2rvy6b1knfie3-PT/image;s=3000x4000" alt="" class="img-post">
           </div>
           <div class="post-text-box">
             <div class="post-text-top">
               <h2>
-                Título Anúncio
+                Sapatilha semi-nova
               </h2>
-              <p class="post-price">R$34,90</p>
+              <p class="post-price">R$75,00</p>
             </div>
             <div class="post-text-bottom">
               <p>Curitiba - PR</p>
