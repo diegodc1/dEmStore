@@ -3,11 +3,12 @@
   display: grid;
   grid-template-columns: 0.25fr 1fr 0.25fr;
   background-color: white;
-  border-bottom: 2px solid rgb(84, 84, 84);
+  border-bottom: 2px solid #108066;
 }
 .header h1 {
   font-family: 'Julius Sans One', sans-serif;
   color: #1c8c71;
+  margin: 0;
 }
 .header-box-item {
   display: flex;

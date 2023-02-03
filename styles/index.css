@@ -1,3 +1,8 @@
+:root {
+  --text-gray: rgb(63, 62, 62);
+  --green-princ: #00cba9;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -22,13 +27,18 @@ main {
 
 .category-group {
   width: 100%;
-  border: 1px solid forestgreen;
+  /* border: 1px solid forestgreen; */
   display: flex;
   align-items: center;
   justify-content: center;
   height: 11rem;
   gap: 7rem;
-  background-color: #00cba9;
+  background-color: var(--green-princ);
+  border-bottom: 5px solid #108066;
+}
+
+.category-group a {
+  text-decoration: none;
 }
 
 .category-item {
@@ -36,6 +46,7 @@ main {
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  font-family: 'Julius Sans One', sans-serif;
 }
 
 .category-item a {
@@ -46,9 +57,10 @@ main {
   padding: 2rem;
   width: 6rem;
   border-radius: 99px;
-  color: black;
+  color: var(--text-gray);
   font-size: 2rem;
   transition: all 0.4s linear;
+  margin-bottom: 0.3rem;
 }
 
 .category-item a:hover {
@@ -86,25 +98,24 @@ main {
 
 .card {
   text-decoration: none;
-  color: black;
+  color: var(--text-gray);
   transition: all 0.6s linear;
+
+  border-bottom: 8px solid var(--green-princ);
+  border-radius: 10px;
+  -webkit-box-shadow: 13px 7px 14px -15px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 13px 7px 14px -15px rgba(0, 0, 0, 0.75);
+  box-shadow: 13px 7px 14px -15px rgba(0, 0, 0, 0.75);
 }
 
 .card:hover {
   scale: 1.04;
   transition: all 0.3s linear;
   cursor: pointer;
-  color: black;
+  color: var(--text-gray);
   text-decoration: none;
   cursor: pointer;
 }
-
-/* .carousel-item img {
-  width: 15rem;
-  height: 15rem;
-  max-width: 15rem;
-  max-height: 15rem;
-} */
 
 /********** POSTS  ***********/
 .posts-group {
@@ -127,7 +138,7 @@ main {
   transition: all 0.5s linear;
   cursor: pointer;
   text-decoration: none;
-  color: black;
+  color: rgb(63, 62, 62);
   border: 1px solid gray;
 }
 
@@ -135,6 +146,7 @@ main {
   scale: 1.04;
   transition: all 0.3s linear;
   cursor: pointer;
+  color: rgb(63, 62, 62);
 }
 
 .post-img-box {
@@ -158,6 +170,7 @@ main {
 
 .post-price {
   font-size: 1.5rem;
+  font-weight: 600;
 }
 
 .post-text-top {
@@ -166,6 +179,9 @@ main {
   width: 100%;
 }
 
+.post-text-top h2 {
+  font-size: 1.3rem;
+}
 .post-text-bottom {
   display: flex;
   width: 100%;
@@ -181,7 +197,7 @@ main {
   margin-top: 4rem;
 }
 
-/********* CARDS  **********/
+/****************** CARDS  ****************/
 .card {
   background-color: white;
   height: 25rem;
@@ -190,4 +206,9 @@ main {
 .card img {
   width: 100%;
   height: 50%;
+}
+
+.card-price {
+  font-size: 1.2rem;
+  font-weight: 600;
 }
