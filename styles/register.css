@@ -1,45 +1,61 @@
-    body{
-        background-color:  rgb(113, 112, 112);
-        text-align: center;
-        
-    }
-   .form-box{
-    width: 75%;
-    background-color:  #00cba9;
-    border: 1px solid rgb(157, 235, 211);
-    border-radius: 25px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 4rem 8rem 4rem 8rem;
-    font-size: 20px;
-   } 
-   .row{
-    align-items: center;
-   
-   }
-    .col-3{
-        align-items: center;
-        width: 20rem;
-        color: white;
-        font: 25px;
+body {
+  background-color: var(--white);
+  /* text-align: center; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
-    }
-    .col-2{
-        width: 30rem;
-        color: white;
-    }
-    .form-control{
-        border: 1px solid rgb(108, 105, 105);
-    }
-    .btn{
-        padding: auto;
-        border-radius: 5%;
-        border: 1px solid rgb(109, 106, 104) ;
-        width: 8rem;
-        background-color: rgb(109, 106, 104);
-        border-top: 1px;
-        margin: 2rem;
-        grid: 5rem;
-        color: white;
-    }
+.form-box {
+  width: 75%;
+  background-color: #00cba9;
+  border: 1px solid rgb(157, 235, 211);
+  border-radius: 25px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 4rem 8rem 4rem 8rem;
+  font-size: 20px;
+  padding: 1rem;
+}
+
+.form-label {
+  margin: 0;
+}
+
+.row {
+  align-items: center;
+}
+
+.row input {
+  height: 1.8rem;
+}
+
+.col-3 {
+  align-items: center;
+  width: 20rem;
+  color: white;
+  font: 25px;
+}
+
+.col-2 {
+  width: 30rem;
+  color: white;
+}
+
+.form-control {
+  border: 1px solid rgb(108, 105, 105);
+}
+
+.btn {
+  padding: auto;
+  border-radius: 5%;
+  border: 1px solid rgb(109, 106, 104);
+  width: 8rem;
+  background-color: rgb(109, 106, 104);
+  border-top: 1px;
+  margin: 2rem;
+  margin-left: 0;
+  grid: 5rem;
+  color: white;
+}

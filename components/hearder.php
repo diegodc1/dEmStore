@@ -6,7 +6,7 @@
 </head>
 <header class="header">
   <div class="header-box-item">
-   <a href=""> <i class="fa-solid fa-house"></i></a>
+   <a href="../index.php"> <i class="fa-solid fa-house"></i></a>
    <a href=""> <i class="fa-solid fa-cart-shopping"></i></a>
  </div>
  <div class="header-box-item">

@@ -18,7 +18,7 @@
 
 ?>
     <main>
-      <div class="category-group"></div>
+      <div class="category-group">
         <div class="category-item">
           <a href=""> <i class="fa-solid fa-person"></i></a>
           <span>Masculino</span>
