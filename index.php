@@ -14,7 +14,7 @@
 <body>
   
 <?php
-  include_once('./components/hearder.php');
+  include_once('./components/header.php');
 
 ?>
     <main>

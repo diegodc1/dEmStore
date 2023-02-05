@@ -12,7 +12,7 @@
   <link rel="stylesheet" href="../styles/register.css">
 </head>
 <body>
-    <?php include_once('../components/hearder.php') ?>
+    <?php include_once('../components/header.php') ?>
     <div class="form-box">
         <form>
             <div class="row mt-3">
