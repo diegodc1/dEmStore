@@ -30,12 +30,11 @@ class UsuarioDaoDB implements UsuarioDao {
 
   }
   public function findAll(){}
-
-  public function findUserLogin($email, $pass){}  
   
   public function findById($id){
     $sql = $this->pdo->prepare("SELECT * FROM users WHERE user_id = :id");
     $sql->bindValue(':id', $id);
+    $sql->execute();
 
     if($sql->rowCount() > 0){
       $data = $sql->fetch();
@@ -81,6 +80,31 @@ class UsuarioDaoDB implements UsuarioDao {
       $u->setCadTime($data['user_cad_time']);
 
       return $u;
+    } else {
+      return false;
+    }
+  }
+
+  public function findUserLogin($email, $pass){
+    $sql = $this->pdo->prepare("SELECT * FROM users WHERE user_email = :email");
+    $sql->bindValue(':email', $email);
+    $sql->execute();
+    $data = $sql->fetch();
+
+    if($sql->rowCount() > 0 && password_verify($pass, $data['user_password'])) {
+        $u = new Usuario;
+        $u->setId($data['user_id']);
+        $u->setName($data['user_name']);
+        $u->setEmail($data['user_email']);
+        $u->setPhone($data['user_phone']);
+        $u->setAddress($data['user_address']);
+        $u->setCity($data['user_city']);
+        $u->setDistric($data['user_district']);
+        $u->setCep($data['user_cep']);
+        $u->setStatus($data['user_status']);
+        $u->setCadDate($data['user_cad_date']);
+        $u->setCadTime($data['user_cad_time']);
+        return $u;
     } else {
       return false;
     }

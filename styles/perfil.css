@@ -58,6 +58,10 @@ form {
   font-size: 1.4rem;
 }
 
+.row-midle {
+  height: 100%;
+}
+
 .row-right {
   height: 100%;
 }

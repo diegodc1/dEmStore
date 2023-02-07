@@ -21,3 +21,17 @@
   font-size: 1.7rem;
   color: #1c8c71;
 }
+
+.btn-login {
+  background-color: #1c8c71;
+  padding: 0.5rem 2rem;
+  border-radius: 5px;
+  text-decoration: none;
+  color: white;
+  font-weight: 600;
+}
+
+.btn-login:hover {
+  color: white;
+  font-weight: 600;
+}

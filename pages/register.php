@@ -34,26 +34,55 @@
             <div class="row mt-3">
                 <div class="col-3">
                     <label for="inputCep" class="form-label">CEP:</label>
-                    <input name="inputCep"type="Number" class="form-control" id="cep">
+                    <input name="inputCep"type="Number" class="form-control" id="cep" onblur="pesquisacep(this.value)">
                 </div>
                 <div class="col-3">
                     <label for="inputStreet" class="form-label">Rua:</label>
-                    <input name="inputStreet"type="text" class="form-control" id="street">
+                    <input name="inputStreet"type="text" class="form-control" id="inputStreet">
                 </div>
               
                 <div class="col-3">
                     <label for="inputDistrict" class="form-label">Bairro:</label>
-                    <input name="inputDistrict"type="text" class="form-control" id="state">
+                    <input name="inputDistrict"type="text" class="form-control" id="inputDistrict">
                 </div>
             </div>
             <div class="row mt-3">
                 <div class="col-3">
                     <label for="inputCity" class="form-label">Cidade:</label>
-                    <input name="inputCity"type="text" class="form-control" id="city">
+                    <input name="inputCity"type="text" class="form-control" id="inputCity">
                 </div>
                 <div class="col-3">
                     <label for="inputState" class="form-label">Estado:</label>
-                    <input name="inputState"type="text" class="form-control" id="state">
+                    <select name="inputState" id="inputState" class="form-select" required>
+                                   <option value="" selected></option>
+                <option value="AC">Acre</option>
+                <option value="AL">Alagoas</option>
+                <option value="AP">Amapá</option>
+                <option value="AM">Amazonas</option>
+                <option value="BA">Bahia</option>
+                <option value="CE">Ceará</option>
+                <option value="DF">Distrito Federal</option>
+                <option value="ES">Espirito Santo</option>
+                <option value="GO">Goiás</option>
+                <option value="MA">Maranhão</option>
+                <option value="MS">Mato Grosso do Sul</option>
+                <option value="MT">Mato Grosso</option>
+                <option value="MG">Minas Gerais</option>
+                <option value="PA">Pará</option>
+                <option value="PB">Paraíba</option>
+                <option value="PR">Paraná</option>
+                <option value="PE">Pernambuco</option>
+                <option value="PI">Piauí</option>
+                <option value="RJ">Rio de Janeiro</option>
+                <option value="RN">Rio Grande do Norte</option>
+                <option value="RS">Rio Grande do Sul</option>
+                <option value="RO">Rondônia</option>
+                <option value="RR">Roraima</option>
+                <option value="SC">Santa Catarina</option>
+                <option value="SP">São Paulo</option>
+                <option value="SE">Sergipe</option>
+                <option value="TO">Tocantins</option>
+                    </select>
                 </div>
                 <div class="col-3">
                     <label for="inputNumber" class="form-label">Número:</label>
@@ -77,7 +106,8 @@
         </form>
     </div>
   
-     <?php  include_once('../components/footer.php') ?>
+    <?php  include_once('../components/footer.php') ?>
+    <script src="../js/pesquisaCep.js"></script>
     
 </body>
 </html>

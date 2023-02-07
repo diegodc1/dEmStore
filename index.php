@@ -1,3 +1,5 @@
+<?php session_start()?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,7 +16,6 @@
 <body>
   
 <?php
-session_start();
   include_once('./components/header.php');
   include_once('./components/alertMessage.php');
 

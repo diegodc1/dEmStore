@@ -1,3 +1,14 @@
+<?php 
+require_once('../db/config.php');
+include_once('../dao/UsuarioDao.php');
+session_start();
+
+$usuarioDao = new UsuarioDaoDB($pdo);
+
+$user = $usuarioDao->findById($_SESSION['user_id']);
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,7 +24,8 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
-  <?php include_once("../components/header.php")?>
+  <?php include_once("../components/header.php");
+  ?>
 
   <main>
     <div class="info-user-box">
@@ -25,35 +37,32 @@
             <h3>Dados Pessoais:</h3>
             <div class="col-10 input-box">
               <label for="inputName" class="form-label">Nome:</label>
-              <input name="inputName" type="text" class="form-control" id="emailInput" placeholder="">
+              <input name="inputName" type="text" class="form-control" id="emailInput" placeholder="" value="<?= $user->getName()?>">
             </div>
 
             <div class="col-10 input-box">
               <label for="inputPhone" class="form-label">Telefone:</label>
-              <input name="inputPhone" type="text" class="form-control" id="inputPhone" placeholder="">
+              <input name="inputPhone" type="text" class="form-control" id="inputPhone" placeholder=""  value="<?= $user->getPhone()?>">
             </div> 
 
             <div class="col-10 input-box">
               <label for="inputEmail" class="form-label">Email:</label>
-              <input name="inputEmail" type="text" class="form-control" id="inputEmail" placeholder="">
+              <input name="inputEmail" type="text" class="form-control" id="inputEmail" placeholder=""  value="<?= $user->getEmail()?>">
             </div>
           </div>
 
           <div class="row-midle">
             <h3>Endereço:</h3>
-            <div class="col-10 input-box">
-              <label for="inputStreet" class="form-label">Rua:</label>
-              <input name="inputStreet" type="text" class="form-control" id="inputStreet" placeholder="">
-            </div>
+
 
             <div class="col-10 input-box">
               <label for="inputDistrict" class="form-label">Bairro:</label>
-              <input name="inputDistrict" type="text" class="form-control" id="inputStreet" placeholder="">
+              <input name="inputDistrict" type="text" class="form-control" id="inputStreet" placeholder=""  value="<?= $user->getDistric()?>">
             </div>
 
             <div class="col-10 input-box">
               <label for="inputCity" class="form-label">Cidade:</label>
-              <input name="inputCity" type="text" class="form-control" id="inputStreet" placeholder="">
+              <input name="inputCity" type="text" class="form-control" id="inputStreet" placeholder=""  value="<?= $user->getCity()?>">
             </div>
           </div>
 

@@ -1,3 +1,5 @@
+<?php session_start()?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -73,6 +75,7 @@
                 <span>Hoje, 18:20</span>
               </div>
             </div>
+          </a>
 
 
     </main>

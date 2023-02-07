@@ -1,3 +1,4 @@
+<?php session_start()?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -22,24 +23,24 @@
         <div class="box-login">
           <h2>Login</h2>
           <div class="line"></div>
-          <form action="">
+          <form action="../actions/loginUserAction.php" method="POST">
             <div class="row">
                 <div class="col-16 input-box">
                     <label for="inputEmail" class="form-label">Email:</label>
-                    <input name="inputEmail "type="text" class="form-control" id="emailInput" placeholder="Digite seu email">
+                    <input name="inputEmail" type="text" class="form-control" id="" placeholder="Digite seu email">
                </div>
             </div>
 
             <div class="row mt-4">
                 <div class="col-12 input-box">
                     <label for="inputPassword" class="form-label">Senha:</label>
-                    <input name="inputPassword "type="password" class="form-control" id="passwordInput" placeholder="Digite sua senha">
+                    <input name="inputPassword" type="password" class="form-control" id="" placeholder="Digite sua senha">
                </div>
             </div>
 
             <div class="row mt-4">
                 <div class="col-12 input-box">
-                   <input name="inputSumbit"type="submit" class="form-control btn-submit" id="inputSumbit" value="Entrar">
+                   <input name="inputSumbit" type="submit" class="form-control btn-submit" id="" value="Entrar">
                </div>
             </div>
           </form>
