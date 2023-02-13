@@ -1,4 +1,14 @@
-<?php session_start()?>
+<?php session_start();
+
+include_once("./db/config.php");
+include_once("./dao/PostDao.php");
+
+$postDao = new postDaoDB($pdo);
+
+
+$posts = $postDao->findAll();
+
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -43,7 +53,20 @@
       
       <h1 class="last-post-title">Destaques</h1>
       <div class="last-posts-group">
-        <a class="card" style="width: 18rem;" href="">
+
+        <?php foreach($posts as $post): ?>
+          <a class="card" style="width: 18rem;" href="">
+            <img src="../images/<?= $post->getImgPath()?>" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <p class="card-price">R$124,90</p>
+            </div>
+          </a>
+        <?php endforeach?>
+
+
+        <!-- <a class="card" style="width: 18rem;" href="">
           <img src="https://img.olx.com.br/images/12/127245586945449.jpg" class="card-img-top" alt="...">
           <div class="card-body">
             <h5 class="card-title">Card title</h5>
@@ -59,7 +82,7 @@
             <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
             <p class="card-price">R$67,00</p>
           </div>
-        </a>
+        </a> -->
 
         <a class="card" style="width: 18rem;">
           <img src="https://img.olx.com.br/images/12/127211674873383.jpg" class="card-img-top" alt="...">

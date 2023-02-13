@@ -8,7 +8,9 @@
 <header class="header">
   <div class="header-box-item">
    <a href="../index.php"> <i class="fa-solid fa-house"></i></a>
-   <a href=""> <i class="fa-solid fa-cart-shopping"></i></a>
+   <?php if(isset($_SESSION['user_logado']) && $_SESSION['user_logado'] == true): ?>
+       <a href="../pages/addPost.php"> <i class="fa-solid fa-bullhorn"></i></a>
+   <?php endif; ?>
  </div>
  <div class="header-box-item">
   <h1>D&M Store</h1>
