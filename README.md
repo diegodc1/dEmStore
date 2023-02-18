@@ -30,10 +30,10 @@ Este projeto foi desenvolvido Orientado a Objetos, utilizando o paradigma de des
 
 A verificação de formulários foi feita na parte do Front-End e Back-and. No front, foi utilizado o JavaScript (arquivos: checkFormPost.js e checkFormRegister.js), já no back, foi feita com o próprio PHP (as verificações estão contidos nos arquivos de Ação da pasta 'Actions').
 
-Na parte de banco de dados, foi utilizado o MySQL. No banco, chamado 'dmstore', foi criado duas tabelas: 'users' e 'posts', utilizados para armazenar os dados dos usuários e das postagens, respectivamente. Cada tabela possui um chave primária, em 'users' é a 'user_id' e em 'posts' é a 'post_id'. Na tabela 'posts' há um campo chamado de 'post_user_id' que faz referência (chave estrangeira) ao campo user_id da tabela 'users'. Segue abaixo, o diagrama do bando de dados:
+Na parte de banco de dados, foi utilizado o MySQL. No banco, chamado 'dmstore', foi criado duas tabelas: 'users' e 'posts', utilizados para armazenar os dados dos usuários e das postagens, respectivamente. Cada tabela possui um chave primária, em 'users' é a 'user_id' e em 'posts' é a 'post_id'. Na tabela 'posts' há um campo chamado de 'post_user_id' que faz referência (chave estrangeira) ao campo user_id da tabela 'users'. Segue abaixo, o diagrama do banco de dados:
 
 <div>
-  <img src="https://imgur.com/Rfxr2cI.png" title="source: imgur.com" />
+  <img src="https://imgur.com/Rfxr2cI.png" title="source: imgur.com" width="240" height="180"/>
 </div>
  
  
