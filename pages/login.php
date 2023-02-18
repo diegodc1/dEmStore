@@ -1,4 +1,12 @@
-<?php session_start()?>
+<?php 
+
+$message = false;
+session_start();
+if(isset($_SESSION['insert_user_message'])) {
+  $message = true;
+}
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,7 +26,7 @@
     <?php include_once('../components/header.php') ?>
 
     <main>
-
+      <?php require('../components/alertMessage.php')?>
       <div class="box-right">
         <div class="box-login">
           <h2>Login</h2>
@@ -26,15 +34,15 @@
           <form action="../actions/loginUserAction.php" method="POST">
             <div class="row">
                 <div class="col-16 input-box">
-                    <label for="inputEmail" class="form-label">Email:</label>
-                    <input name="inputEmail" type="text" class="form-control" id="" placeholder="Digite seu email">
+                    <label for="inputEmail" class="form-label " id="label">Email:</label>
+                    <input name="inputEmail" type="email" class="form-control <?php if($message){echo 'is-invalid';}?>" id="email" required placeholder="Digite seu email">
                </div>
             </div>
 
             <div class="row mt-4">
                 <div class="col-12 input-box">
-                    <label for="inputPassword" class="form-label">Senha:</label>
-                    <input name="inputPassword" type="password" class="form-control" id="" placeholder="Digite sua senha">
+                    <label for="inputPassword" class="form-label" id="label">Senha:</label>
+                    <input name="inputPassword" type="password" class="form-control  <?php if($message){echo 'is-invalid';}?>" id="password" required placeholder="Digite sua senha">
                </div>
             </div>
 

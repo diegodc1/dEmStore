@@ -1,3 +1,33 @@
+<?php 
+session_start();
+require_once('../db/config.php');
+require_once('../dao/PostDao.php');
+require_once('../dao/UsuarioDao.php');
+
+$postDao = new postDaoDB($pdo);
+$usuarioDao = new usuarioDaoDB($pdo);
+$postId = filter_input(INPUT_GET, 'id');
+
+
+$post = $postDao->findById($postId);
+
+$datePost = date('d/m/Y', strtotime($post->getDate()));
+$timePost = date('H:i', strtotime($post->getTime()));
+
+$user = $usuarioDao->findById($post->getUserId());
+
+if(isset($_SESSION['user_id'])){
+  if($post->getUserId() != $_SESSION['user_id']) {
+    $postDao->updateViews($post->getId());
+  }
+} else {
+  $postDao->updateViews($post->getId());
+}
+
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,59 +42,61 @@
   <link rel="stylesheet" href="/styles/post.css">
 </head>
 <body>
-  <?php include_once("../components/header.php")?>;
+  <?php include_once("../components/header.php")?>
   <main>
     <div class="main-top">
       <div class="top-left">
-        <h1>Titulo do Anúncio</h1>
-        <p class="post-infos">Publicado em 10/02/23 às 09:30</p>
+        <h1><?= $post->getTitle()?></h1>
+        <p class="post-infos">Publicado em <?= $datePost?> às <?= $timePost?></p>
         <div class="img-box">
-          <img src="https://assets3.repassa.com.br/fit-in/0x600/filters:sharpen(0.5,0.5,true)/spree/products/2338700/original/IMG_3565.JPG" alt="">
+          <img src="../images/<?= $post->getImgPath()?>" alt="">
         </div>
       </div>
       <div class="top-right">
         <div class="price-box">
-          <span>R$ 394</span>
+          <span>R$ <?= number_format($post->getPrice(),2, ",", ".") ?></span>
         </div>
 
         <div class="box-right">
           
           <div class="desc-box">
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum, minima. Neque magni, pariatur ullam ex fuga temporibus dicta illum iure ab ipsam odio exercitationem. At minus dolor optio? Cum, delectus.</p></p>
+            <p><?= $post->getContent()?></p></p>
           </div>
 
           <div class="main-down">
             <h2>Detalhes</h2>
+            <div class="line-div"></div>
+
             <div class="details-box">
               <div class="detail-box">
                 <p class="detail-title">Nome Vendedor</p>
-                <span class="detail-desc">Marcelly</span>
+                <span class="detail-desc"><?= $user->getName() ?></span>
               </div>
 
               <div class="detail-box">
                 <p class="detail-title">Telefone</p>
-                <span class="detail-desc">4198438431</span>
+                <span class="detail-desc"><?= $user->getPhone() ?></span>
               </div>
 
               <div class="detail-box">
                 <p class="detail-title">Cidade</p>
-                <span class="detail-desc">Curitiba</span>
+                <span class="detail-desc"><?= $user->getCity() ?></span>
               </div>
               
               <div class="detail-box">
                 <p class="detail-title">Bairro</p>
-                <span class="detail-desc">Campo Santana</span>
+                <span class="detail-desc"><?= $user->getDistric() ?></span>
               </div>
             </div>
+            <div class="line-div"></div>
           </div>
         </div>
       </div>
     </div>
-    <div class="line"></div>
     
   </main>
+  <?php include_once("../components/footer.php")?>
 
-  <?php include_once("../components/footer.php")?>;
 
 </body>
 </html>

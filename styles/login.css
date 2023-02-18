@@ -84,3 +84,12 @@ form {
   color: #00cba9;
   font-weight: 600;
 }
+
+.border-error {
+  border: 2px solid red !important;
+}
+
+.label-error {
+  color: red;
+  font-weight: 600;
+}

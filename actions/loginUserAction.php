@@ -5,12 +5,8 @@ session_start();
 
 $usuarioDao = new UsuarioDaoDB($pdo);
 
-
 $email = filter_input(INPUT_POST, 'inputEmail');
 $password = filter_input(INPUT_POST, 'inputPassword');
-
-echo $email;
-echo $password;
 
 if($usuarioDao->findUserLogin($email, $password) != false) {
   $user = $usuarioDao->findByEmail($email);
@@ -25,10 +21,15 @@ if($usuarioDao->findUserLogin($email, $password) != false) {
     $_SESSION['user_cep'] = $user->getCep();
     $_SESSION['user_logado'] = true;
   
+    $_SESSION['message-type'] = 'success';
+    $_SESSION['icon-message'] = '#check-circle-fill';
+    $_SESSION['insert_user_message'] = "Seja bem vindo, " . $user->getName() . "!";
     header("Location: ../index.php");
+    exit();
 } else {
-  echo $email;
-  echo $password;
-  echo "Erro";
+  $_SESSION['message-type'] = 'danger';
+  $_SESSION['icon-message'] = '#exclamation-triangle-fill';
+  $_SESSION['insert_user_message'] = "Email ou senha incorretos!";
+  $_SESSION['error_login'] = true;
   header("Location: ../pages/login.php");
 }

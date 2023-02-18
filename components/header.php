@@ -9,21 +9,23 @@
   <div class="header-box-item">
    <a href="../index.php"> <i class="fa-solid fa-house"></i></a>
    <?php if(isset($_SESSION['user_logado']) && $_SESSION['user_logado'] == true): ?>
-       <a href="../pages/addPost.php"> <i class="fa-solid fa-bullhorn"></i></a>
+      <a href="../pages/addPost.php" class="anunciar-a" alt="Anunciar"> <i class="fa-solid fa-bullhorn"></i> Anuncie aqui</a>
    <?php endif; ?>
- </div>
+  </div>
+
  <div class="header-box-item">
   <h1>D&M Store</h1>
  </div>
+
  <div class="header-box-item">
   <?php if(!isset($_SESSION['user_logado']) || $_SESSION['user_logado'] == false): ?>
-          <a href="../pages/login.php" class="btn-login">Login</a>
-        <?php endif; ?>
+    <a href="../pages/login.php" class="btn-login">Login</a>
+  <?php endif; ?>
 
      
   <?php if(isset($_SESSION['user_logado']) && $_SESSION['user_logado'] == true): ?>
      <a href="../pages/perfil.php"> <i class="fa-solid fa-circle-user"></i></a>
-    <a href="../actions/logoutAction.php"> <i class="fa-solid fa-right-from-bracket"></i></a>
+      <a href="../actions/logoutAction.php"> <i class="fa-solid fa-right-from-bracket"></i></a>
    <?php endif; ?>
  </div>
 </header>

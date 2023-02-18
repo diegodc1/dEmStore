@@ -11,6 +11,7 @@ main {
   flex-direction: column;
   align-items: center;
   padding-top: 2rem;
+  min-height: 70vh !important;
 }
 
 main h1 {
@@ -34,4 +35,10 @@ main h1 {
 
 form label {
   margin: 0 !important;
+}
+
+.btn-submit {
+  background-color: #00cba9;
+  color: white;
+  font-weight: 700;
 }

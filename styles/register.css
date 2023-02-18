@@ -6,6 +6,11 @@ body {
   align-items: center;
 }
 
+h1 {
+  font-family: 'Julius Sans One', sans-serif;
+  margin-top: 3rem;
+}
+
 .form-box {
   width: 75%;
   background-color: #00cba9;
@@ -14,7 +19,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 4rem 8rem 4rem 8rem;
+  margin: 0.5rem 8rem 4rem 8rem;
   font-size: 20px;
   padding: 1rem;
 }
@@ -26,10 +31,6 @@ body {
 .row {
   align-items: center;
 }
-
-/* .row input {
-  height: 1.8rem;
-} */
 
 .col-3 {
   align-items: center;
@@ -58,4 +59,15 @@ body {
   margin-left: 0;
   grid: 5rem;
   color: white;
+}
+
+/* Remover setas do campo input number */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type='number'] {
+  -moz-appearance: textfield;
 }

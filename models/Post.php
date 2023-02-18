@@ -106,10 +106,14 @@ class Post {
 interface PostDao {
   public function add(Post $u);
   public function findAll();
+  public function findAllByCategory($category, $category2);
+  public function findLastFourPost();
   public function findById($id);
+  public function findByUserId($id);
   public function update(Post $u);
   public function delete($id);
   public function disable($id);
   public function activate($id);
+  public function updateViews($id);
 }
 

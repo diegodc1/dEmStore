@@ -64,12 +64,21 @@ form {
 
 .row-right {
   height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start !important;
+}
+
+.row-right form {
+  margin: 0;
 }
 
 .btn-submit {
   background-color: #00cba9 !important;
   color: white !important;
   font-weight: 600 !important;
+  width: 50% !important;
+  margin-top: 2rem !important;
 }
 
 /************** POSTS USER *****************/
@@ -90,7 +99,7 @@ form {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 3rem;
+  margin-top: 5rem;
 }
 
 .btn-delete-post {
@@ -99,11 +108,24 @@ form {
   font-weight: 500;
   border-bottom: 1px solid red;
   margin-top: 0.4rem;
+  border: none;
+  background-color: white;
 }
 
 .btn-delete-post:hover {
   text-decoration: none;
   color: red;
+}
+
+.btn-delete-post.modal-btn {
+  background-color: rgb(192, 29, 29) !important;
+  color: white !important;
+  padding: 0.4rem 1rem;
+  border-radius: 5px;
+}
+
+.btn-delete-post.modal-btn:hover {
+  filter: brightness(1.06);
 }
 
 .card {
@@ -112,6 +134,7 @@ form {
   text-decoration: none;
   color: var(--text-gray);
   transition: all 0.6s linear;
+  height: 27rem;
 
   border-bottom: 8px solid var(--green-princ);
   border-radius: 10px;
@@ -127,4 +150,71 @@ form {
   color: var(--text-gray);
   text-decoration: none;
   cursor: pointer;
+}
+
+.card img {
+  height: 46%;
+}
+
+.card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.body-card-2 {
+  display: flex;
+  flex-direction: column;
+}
+
+.body-card-2 p {
+  margin: 0;
+}
+
+/* MODAL */
+
+.modal-header {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+.modal-body {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  /* justify-content:; */
+}
+
+.modal-header,
+.modal-footer {
+  border: none !important;
+}
+
+.modal-body i {
+  color: rgb(192, 29, 29);
+  font-size: 1.9rem;
+  margin-bottom: 1rem;
+}
+
+.title-modal-delete {
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.modal-body p {
+  margin: 0 !important;
+}
+
+.post-info-modal {
+  margin: 1rem 0rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.modal-body span {
+  font-weight: 700;
+  font-size: 0.8rem;
+  color: orange;
 }

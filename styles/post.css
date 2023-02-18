@@ -4,9 +4,15 @@
   box-sizing: border-box;
 }
 
+body {
+  display: flex;
+  flex-direction: column;
+}
+
 main {
   display: flex;
   flex-direction: column;
+  margin-bottom: 8rem;
 }
 
 .main-top {
@@ -17,6 +23,13 @@ main {
 
 .top-left h1 {
   margin: 0;
+}
+
+.top-right {
+  /* background-color: #00cba9; */
+  padding: 1rem;
+  border-radius: 5px;
+  /* color: white !important; */
 }
 
 .post-infos {
@@ -46,7 +59,7 @@ main {
 }
 
 .price-box span {
-  background-color: #00cba9;
+  background-color: #108066;
   padding: 0.5rem 2rem;
   border-radius: 5px;
   font-size: 1.4rem;
@@ -70,13 +83,14 @@ main {
   gap: 2rem;
 }
 
-.line {
-  margin-left: 2rem;
+.line-div {
   width: 10%;
-  border: 1px solid gray;
-  opacity: 0.4;
+  border: 0.6px solid rgb(180, 180, 180) !important;
+  opacity: 0.2 !important;
   font-weight: 400;
   border-radius: 5px;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
 }
 
 .detail-title {

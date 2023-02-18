@@ -1,26 +1,18 @@
 function limpa_formulário_cep() {
-  document.getElementById('inputStreet').value = ''
-  document.getElementById('inputDistrict').value = ''
-  document.getElementById('inputCity').value = ''
-  document.getElementById('inputState').value = ''
+  document.getElementById('street').value = ''
+  document.getElementById('district').value = ''
+  document.getElementById('city').value = ''
+  document.getElementById('state').value = ''
 }
 
 function meu_callback(conteudo) {
   if (!('erro' in conteudo)) {
-    //Atualiza os campos com os valores.
-    // document.getElementById('inputZipCode').classList.remove('error-cep')
-    // document.getElementById('message-cep-error').style.display = 'none'
-    document.getElementById('inputStreet').value = conteudo.logradouro
-    document.getElementById('inputDistrict').value = conteudo.bairro
-    document.getElementById('inputCity').value = conteudo.localidade
-    document.getElementById('inputState').value = conteudo.uf
-    // document.getElementById('continue-button').disabled = false
+    document.getElementById('street').value = conteudo.logradouro
+    document.getElementById('district').value = conteudo.bairro
+    document.getElementById('city').value = conteudo.localidade
+    document.getElementById('state').value = conteudo.uf
   } else {
-    //CEP não Encontrado.
     limpa_formulário_cep()
-    // document.getElementById('inputZipCode').classList.add('error-cep')
-    // document.getElementById('message-cep-error').style.display = 'flex'
-    // document.getElementById('continue-button').disabled = true
   }
 }
 
@@ -33,15 +25,10 @@ function pesquisacep(valor) {
 
     //Valida o formato do CEP.
     if (validacep.test(cep)) {
-      //Preenche os campos com "..." enquanto consulta webservice.
-      // document.getElementById('inputZipCode').classList.remove('error-cep')
-      // document.getElementById('message-cep-error').style.display = 'none'
-      document.getElementById('inputStreet').value = '...'
-      document.getElementById('inputDistrict').value = '...'
-      document.getElementById('inputCity').value = '...'
-      document.getElementById('inputState').value = '...'
-      // document.getElementById('continue-button').disabled = false
-      // document.getElementById('ibge').value = '...'
+      document.getElementById('street').value = '...'
+      document.getElementById('district').value = '...'
+      document.getElementById('city').value = '...'
+      document.getElementById('state').value = '...'
 
       var script = document.createElement('script')
       script.src =
@@ -49,9 +36,6 @@ function pesquisacep(valor) {
 
       document.body.appendChild(script)
     } else {
-      //cep é inválido.
-      // document.getElementById('inputZipCode').classList.add('error-cep')
-      // document.getElementById('message-cep-error').style.display = 'flex'
       document.getElementById('continue-button').disabled = true
       limpa_formulário_cep()
     }

@@ -18,6 +18,17 @@
   }
 ?>
 
+<style>
+  .alert.message {
+  position: fixed;
+  top: 0;
+  right:0;
+  z-index: 20;
+  margin-top: 1rem;
+  margin-right: 1rem;
+  width: 35vw;
+}
+</style>
 <div class="symblos">
       <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
       <symbol id="check-circle-fill" fill="currentColor" viewBox="0 0 16 16">

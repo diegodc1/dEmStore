@@ -1,1 +1,1 @@
-tirei o campo rua do perfil
+--colocar na documentação avisando que a contagem de visualizaçoes só sobe se o anuncio não for do proprio usuário

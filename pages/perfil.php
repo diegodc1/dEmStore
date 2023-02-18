@@ -1,12 +1,15 @@
 <?php 
 require_once('../db/config.php');
 include_once('../dao/UsuarioDao.php');
-session_start();
+require_once('../dao/PostDao.php');
+require_once('../actions/authenticate.php');
 
 $usuarioDao = new UsuarioDaoDB($pdo);
+$postDao = new postDaoDB($pdo);
 
 $user = $usuarioDao->findById($_SESSION['user_id']);
 
+$userPosts = $postDao->findByUserId($_SESSION['user_id']);
 ?>
 
 <!DOCTYPE html>
@@ -29,26 +32,31 @@ $user = $usuarioDao->findById($_SESSION['user_id']);
 
   <main>
     <div class="info-user-box">
+      <?php require('../components/alertMessage.php')?>
       <h1>Meu cadastro</h1>
-      <form action="">
+      <form action="../actions/updateUserAction.php" method="POST">
         <div class="row row-box">
 
           <div class="row-left">
             <h3>Dados Pessoais:</h3>
+            <input name="id" type="hidden" class="form-control" id="id" required value="<?= $user->getId()?>">
+
             <div class="col-10 input-box">
               <label for="inputName" class="form-label">Nome:</label>
-              <input name="inputName" type="text" class="form-control" id="emailInput" placeholder="" value="<?= $user->getName()?>">
+              <input name="inputName" type="text" class="form-control" id="emailInput" required value="<?= $user->getName()?>">
             </div>
 
             <div class="col-10 input-box">
               <label for="inputPhone" class="form-label">Telefone:</label>
-              <input name="inputPhone" type="text" class="form-control" id="inputPhone" placeholder=""  value="<?= $user->getPhone()?>">
+              <input name="inputPhone" type="text" class="form-control" id="inputPhone" required value="<?= $user->getPhone()?>">
             </div> 
 
             <div class="col-10 input-box">
               <label for="inputEmail" class="form-label">Email:</label>
-              <input name="inputEmail" type="text" class="form-control" id="inputEmail" placeholder=""  value="<?= $user->getEmail()?>">
+              <input name="inputEmail" type="text" class="form-control" id="inputEmail" required value="<?= $user->getEmail()?>">
             </div>
+
+            <input name="inputSumbit" type="submit" class="form-control btn-submit" id="inputSumbit" value="Atualizar Dados">
           </div>
 
           <div class="row-midle">
@@ -57,37 +65,36 @@ $user = $usuarioDao->findById($_SESSION['user_id']);
 
             <div class="col-10 input-box">
               <label for="inputDistrict" class="form-label">Bairro:</label>
-              <input name="inputDistrict" type="text" class="form-control" id="inputStreet" placeholder=""  value="<?= $user->getDistric()?>">
+              <input name="inputDistrict" type="text" class="form-control" id="inputStreet" required value="<?= $user->getDistric()?>">
             </div>
 
             <div class="col-10 input-box">
               <label for="inputCity" class="form-label">Cidade:</label>
-              <input name="inputCity" type="text" class="form-control" id="inputStreet" placeholder=""  value="<?= $user->getCity()?>">
+              <input name="inputCity" type="text" class="form-control" id="inputStreet" required value="<?= $user->getCity()?>">
             </div>
-          </div>
-
-          <div class="row-right">
-            <h3>Senha</h3>
-            <div class="col-9 input-box">
-              <label for="inputPassword" class="form-label">Senha:</label>
-              <input name="inputPassword" type="text" class="form-control" id="inputStreet" placeholder="">
-            </div>
-
-            <div class="col-9 input-box">
-              <label for="inputConfirmPassword" class="form-label">Confirme sua senha:</label>
-              <input name="inputConfirmPassword" type="text" class="form-control" id="inputStreet" placeholder="">
-            </div>
-          </div>
         </div>
+        
 
-         <div class="row mt-4">
-            <div class="col-2 input-box">
-              <input name="inputSumbit" type="submit" class="form-control btn-submit" id="inputSumbit" value="Atualizar Dados">
+        </form>
+       
+        <div class="row-right">
+          <form action="../actions/udpatePassword.php" method="POST">
+            <h3>Senha</h3>
+            <input name="id" type="hidden" class="form-control" id="id" required value="<?= $user->getId()?>">
+            <div class="col-9 input-box">
+              <label for="password1" class="form-label">Senha:</label>
+              <input name="password1" type="password" class="form-control" required placeholder="">
             </div>
-          </div>
-      
-       </div>
-      </form>
+
+            <div class="col-9 input-box">
+              <label for="confirmPass" class="form-label">Confirme sua senha:</label>
+              <input name="confirmPass" type="password" class="form-control" required placeholder="">
+            </div>
+            <input name="inputSumbit" type="submit" class="form-control btn-submit" id="inputSumbit" value="Atualizar Senha">
+          </form>
+        </div>
+     
+    </div>
     </div>
 
     <div class="user-posts">
@@ -95,41 +102,57 @@ $user = $usuarioDao->findById($_SESSION['user_id']);
 
       <div class="posts-box">
 
-      <div class="post">
-        <a class="card" style="width: 18rem;" href="">
-          <img src="https://img.olx.com.br/images/12/127245586945449.jpg" class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            <p class="card-price">R$124,90</p>
-          </div>
-        </a>
-        <a href="../index.php" class="btn-delete-post">Excluir Anúncio</a>  
-      </div>
+      <?php foreach($userPosts as $post): ?>
+        <div class="post">
+          <a class="card" style="width: 18rem;" href="../pages/post.php?id=<?= $post->getId()?>">
+            <img src="../images/<?= $post->getImgPath()?>" class="card-img-top" alt="...">
+            <div class="card-body">
+              <div class="body-card-1">
+                <h5 class="card-title"><?= $post->getTitle()?></h5>
+                <p class="card-text"><?= $post->getContent()?></p>
+              </div>
+              <div class="body-card-2">
+                <p class="card-price">R$<?= number_format($post->getPrice(),2, ",", ".") ?></p>
+                <p><?= $post->getViews()?> visualizações</p>
+              </div>
+            </div>
+          </a> 
+          <button type="button" class="btn-delete-post" data-bs-toggle="modal" data-bs-target="#deleteModal<?= $post->getId()?>">
+            Excluir Anúncio
+          </button>
+        </div>
 
-      <div class="post">
-        <a class="card" style="width: 18rem;" href="">
-          <img src="https://img.olx.com.br/images/12/127245586945449.jpg" class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            <p class="card-price">R$124,90</p>
-          </div>
-        </a>
-        <a href="../index.php" class="btn-delete-post">Excluir Anúncio</a>  
-      </div>
 
-      <div class="post">
-        <a class="card" style="width: 18rem;" href="">
-          <img src="https://img.olx.com.br/images/12/127245586945449.jpg" class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            <p class="card-price">R$124,90</p>
+        <!-- MODAL -->
+        <div class="modal fade" id="deleteModal<?= $post->getId()?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+    
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <i class="fa-solid fa-trash"></i>
+                <p class="title-modal-delete">Você realmente deseja excluir este anúncio?</p>
+                <div class="post-info-modal">
+                  <p>Anúncio:  <?= $post->getTitle()?></p>
+                  <p>Data de publicação: <?= date('d/m/Y', strtotime($post->getDate()))?></p>
+                  <p>Visualizações: <?= $post->getViews()?></p>
+                </div>
+                
+                <span>Atenção! Após a confirmação, não será possível reverter essa ação!</span>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                <a href="../actions/deletePostAction.php?id=<?= $post->getId() ?>" class="btn-delete-post modal-btn">Excluir Anúncio</a> 
+              </div>
+            </div>
           </div>
-        </a>
-        <a href="../index.php" class="btn-delete-post">Excluir Anúncio</a>  
-      </div>
+        </div>
+      <?php endforeach; ?>  
+
+   
+
       </div>
     </div>
   </main>

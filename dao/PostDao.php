@@ -32,7 +32,63 @@ class PostDaoDB implements PostDao {
   public function findAll(){
     $posts = [];
 
-    $sql = $this->pdo->query("SELECT * FROM posts");
+    $sql = $this->pdo->query("SELECT * FROM posts ORDER BY post_date, post_time DESC");
+    if ($sql->rowCount() > 0) {
+      $data = $sql->fetchAll();
+
+      foreach ($data as $post) {
+        $u = new Post;
+        $u->setId($post['post_id']);
+        $u->setTitle($post['post_title']);
+        $u->setContent($post['post_content']);
+        $u->setCategory($post['post_category']);
+        $u->setUserId($post['post_user_id']);
+        $u->setDate($post['post_date']);
+        $u->setTime($post['post_time']);
+        $u->setViews($post['post_views']);
+        $u->setStatus($post['post_status']);
+        $u->setPrice($post['post_price']);
+        $u->setImgPath($post['post_img_path']);
+  
+
+        $posts[] = $u;
+      }
+    }
+    return $posts;
+  }
+
+  public function findAllByCategory($category, $category2){
+    $posts = [];
+
+    $sql = $this->pdo->query("SELECT * FROM posts WHERE post_category LIKE '$category' OR post_category LIKE '$category2' ORDER BY  post_date, post_time DESC ");
+    if ($sql->rowCount() > 0) {
+      $data = $sql->fetchAll();
+
+      foreach ($data as $post) {
+        $u = new Post;
+        $u->setId($post['post_id']);
+        $u->setTitle($post['post_title']);
+        $u->setContent($post['post_content']);
+        $u->setCategory($post['post_category']);
+        $u->setUserId($post['post_user_id']);
+        $u->setDate($post['post_date']);
+        $u->setTime($post['post_time']);
+        $u->setViews($post['post_views']);
+        $u->setStatus($post['post_status']);
+        $u->setPrice($post['post_price']);
+        $u->setImgPath($post['post_img_path']);
+  
+
+        $posts[] = $u;
+      }
+    }
+    return $posts;
+  }
+
+  public function findLastFourPost(){
+    $posts = [];
+
+    $sql = $this->pdo->query("SELECT * FROM posts ORDER BY post_date LIMIT 4");
     if ($sql->rowCount() > 0) {
       $data = $sql->fetchAll();
 
@@ -85,6 +141,34 @@ class PostDaoDB implements PostDao {
     }
   }
 
+  public function findByUserId($id){
+    $posts = [];
+
+    $sql = $this->pdo->query("SELECT * FROM posts WHERE post_user_id = $id");
+    if ($sql->rowCount() > 0) {
+      $data = $sql->fetchAll();
+
+      foreach ($data as $post) {
+        $u = new Post;
+        $u->setId($post['post_id']);
+        $u->setTitle($post['post_title']);
+        $u->setContent($post['post_content']);
+        $u->setCategory($post['post_category']);
+        $u->setUserId($post['post_user_id']);
+        $u->setDate($post['post_date']);
+        $u->setTime($post['post_time']);
+        $u->setViews($post['post_views']);
+        $u->setStatus($post['post_status']);
+        $u->setPrice($post['post_price']);
+        $u->setImgPath($post['post_img_path']);
+  
+
+        $posts[] = $u;
+      }
+    }
+    return $posts;
+  }
+
   public function update(Post $u){}
 
   public function delete($id){
@@ -104,6 +188,13 @@ class PostDaoDB implements PostDao {
     $sql = $this->pdo->prepare("UPDATE posts SET post_status = :status WHERE post_id = :id");
     $sql->bindValue(':id', $id);
     $sql->bindValue(':status', 'Ativado');
+    $sql->execute(); 
+  }
+
+  
+  public function updateViews($id){
+    $sql = $this->pdo->prepare("UPDATE posts SET post_views = (post_views + 1) WHERE post_id = :id");
+    $sql->bindValue(':id', $id);
     $sql->execute(); 
   }
 }

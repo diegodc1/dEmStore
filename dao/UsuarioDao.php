@@ -110,7 +110,28 @@ class UsuarioDaoDB implements UsuarioDao {
     }
   }
   
-  public function update(Usuario $u){}
+  public function update(Usuario $u){
+    $sql = $this->pdo->prepare("UPDATE users SET user_name = :name, user_email = :email, user_phone = :phone, user_city = :city, user_district = :district WHERE user_id = :id");
+    $sql->bindValue(':name', $u->getName());
+    $sql->bindValue(':email', $u->getEmail());
+    $sql->bindValue(':phone', $u->getPhone());
+    $sql->bindValue(':city', $u->getCity());
+    $sql->bindValue(':district', $u->getDistric());
+    $sql->bindValue(':id', $u->getId());
+    $sql->execute();
+
+    return true;
+  }
+
+  public function updatePassword(Usuario $u){
+    $sql = $this->pdo->prepare("UPDATE users SET user_password = :pass WHERE user_id = :id");
+    $sql->bindValue(':pass', $u->getPassword());
+    $sql->bindValue(':id', $u->getId());
+    $sql->execute();
+
+    return true;
+  }
+  
 
 
   public function delete($id){

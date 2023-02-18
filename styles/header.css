@@ -22,6 +22,18 @@
   color: #1c8c71;
 }
 
+.header-box-item .anunciar-a {
+  text-decoration: none;
+  color: #108066;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  border: 1.5px solid #108066;
+  border-radius: 5px;
+  padding: 0.3rem;
+}
+
 .btn-login {
   background-color: #1c8c71;
   padding: 0.5rem 2rem;
