@@ -14,6 +14,7 @@ O objetivo da D&M Store é ser um marketplace de roupas usadas, no estilo OLX. O
 
 Esse projeto foi desenvolvido com as seguintes tecnologias:
   
+  * HTML
   * CSS
   * Bootstrap 5
   * JavaScript
